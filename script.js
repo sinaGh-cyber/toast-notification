@@ -27,5 +27,5 @@ function createNotification(message = null, type = null) {
 }
 
 function getRandomItemFromArray(arrayName) {
-  return messages[Math.floor(Math.random() * arrayName.length)];
+  return arrayName[Math.floor(Math.random() * arrayName.length)];
 }
