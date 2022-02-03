@@ -15,9 +15,9 @@ button.addEventListener('click', () => createNotification());
 function createNotification(message = null, type = null) {
   const notif = document.createElement('div');
   notif.classList.add('toast');
-  notif.classList.add(type ? type : getRandomType());
+  notif.classList.add(type ? type : getRandomItemFromArray(types));
 
-  notif.innerText = message ? message : getRandomMessage();
+  notif.innerText = message ? message : getRandomItemFromArray(messages);
 
   toasts.appendChild(notif);
 
@@ -26,10 +26,6 @@ function createNotification(message = null, type = null) {
   }, 3000);
 }
 
-function getRandomMessage() {
-  return messages[Math.floor(Math.random() * messages.length)];
-}
-
-function getRandomType() {
-  return types[Math.floor(Math.random() * types.length)];
+function getRandomItemFromArray(arrayName) {
+  return messages[Math.floor(Math.random() * arrayName.length)];
 }
